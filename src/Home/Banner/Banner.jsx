@@ -8,7 +8,7 @@ import sliderImg3 from "../../assets/banners/istockphoto-1131625839-1024x1024-tr
 ;
 const Banner = () => {
   return (
-    <Carousel className="w-full h-[40px]">
+    <Carousel>
       <div>
         <img src={sliderImg1} />
       </div>

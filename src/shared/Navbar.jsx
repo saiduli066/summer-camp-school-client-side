@@ -132,8 +132,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <button
-            
+          <button            
             className="btn btn-secondary md:text-xl "
           >
             Logout
@@ -142,7 +141,7 @@ const Navbar = () => {
           <Link to="/login" className="btn btn-success md:text-xl text-white">
             Login
           </Link>
-        )}{" "}
+        )}
       </div>
     </div>
   );
