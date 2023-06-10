@@ -5,6 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import sliderImg1 from "../../assets/banners/language-learn-transformed.jpeg";
 import sliderImg2 from "../../assets/banners/istockphoto-1399155965-1024x1024-transformed.jpeg";
 import sliderImg3 from "../../assets/banners/istockphoto-1131625839-1024x1024-transformed.jpeg";
+;
 const Banner = () => {
   return (
     <Carousel className="w-full h-[40px]">
@@ -19,6 +20,7 @@ const Banner = () => {
       </div>
     </Carousel>
   );
+
 };
 
 export default Banner;
