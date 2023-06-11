@@ -97,6 +97,7 @@ const Body = () => {
         </div>
 
         {/* popular teachers */}
+
         <h2 className="text-xl md:text-5xl font-[600] text-center my-4 md:my-10">
           Popular Teachers
         </h2>
@@ -116,8 +117,8 @@ const Body = () => {
               <div className="card-body items-center text-center">
                 <h2 className="card-title">{popularTeacher.name}</h2>
                 <p>
-                  <span className="font-[500]">Email</span>:
-                  {popularTeacher.email}
+                  <span className="font-[500]">Subject:</span>
+                  {popularTeacher.class}
                 </p>
               </div>
             </div>
