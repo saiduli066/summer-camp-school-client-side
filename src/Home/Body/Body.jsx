@@ -42,7 +42,7 @@ const Body = () => {
         </div>
 
         <div>
-          <h2 className="text-xl md:text-5xl font-[600] text-center my-4 md:my-10">
+          <h2 className="text-3xl font-[600] text-center my-4 md:my-10">
             Choose your course
           </h2>
           <p className="font-normal px-4 md:px-8 py-4">
@@ -57,7 +57,7 @@ const Body = () => {
 
         {/* popular classes */}
 
-        <h2 className="text-xl md:text-5xl font-[600] text-center my-4 md:my-10">
+        <h2 className="text-3xl font-[600] text-center my-4 md:my-10">
           Popular Courses
         </h2>
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-2  md:gap-4 p-3 ">
@@ -98,7 +98,7 @@ const Body = () => {
 
         {/* popular teachers */}
 
-        <h2 className="text-xl md:text-5xl font-[600] text-center my-4 md:my-10">
+        <h2 className="text-3xl font-[600] text-center my-4 md:my-10">
           Popular Teachers
         </h2>
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-2  md:gap-4 p-3 ">
