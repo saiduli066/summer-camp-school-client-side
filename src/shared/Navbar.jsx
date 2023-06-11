@@ -150,10 +150,11 @@
 // export default Navbar;
 
 /* eslint-disable no-unused-vars *//* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from "../Providers/AuthProviders";
 
 //..
 
@@ -161,9 +162,9 @@ import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = ({ theme, toggleTheme }) => {
  
-  // const { user, logOut } = useContext(AuthContext);
-  // console.log(user);
-  const user = false;
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+ 
 
   /**NavBar**/
   return (
