@@ -281,19 +281,16 @@ const Navbar = ({ theme, toggleTheme }) => {
           </li>
         </ul>
 
-       
         <button
           className="btn btn-circle btn-sm btn-primary ml-2"
           onClick={toggleTheme} // call the toggleTheme function
         >
-          {theme === "light" ? "🌙" : "☀️"} 
+          {theme === "light" ? "🌙" : "☀️"}
         </button>
       </div>
       <div className="navbar-end">
         {user ? (
-          <button
-            className="btn btn-secondary md:text-xl "
-          >
+          <button onClick={logOut} className="btn btn-secondary md:text-xl ">
             Logout
           </button>
         ) : (
