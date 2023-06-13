@@ -57,18 +57,18 @@ const Login = () => {
         name: loggedInUser.displayName,
         email: loggedInUser.email,
       };
-      navigate(from, { replace: true });
-      //   fetch("", {
-      //     method: "POST",
-      //     headers: {
-      //       "content-type": "application/json",
-      //     },
-      //     body: JSON.stringify(saveUser),
-      //   })
-      // .then((res) => res.json())
-      // .then(() => {
-      // //   navigate(from, { replace: true });
-      // });
+
+        fetch("https://summer-camp-server-side-seven.vercel.app/students", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+      .then((res) => res.json())
+      .then(() => {
+        navigate(from, { replace: true });
+      });
     });
   };
 
