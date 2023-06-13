@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import Anime from 'react-anime';
 import { FaBookOpen, FaLaptop, FaLockOpen, FaRegStar, FaStar, FaUsers } from 'react-icons/fa';
 import Rating from 'react-rating';
 
@@ -21,24 +22,76 @@ const Body = () => {
 
 
     return (
-      <div className="my-4 md:my-8">
+      <div className="my-6 md:my-20">
+        {/*
+            <div className="grid md:grid-cols-4 grid-cols-2 gap-5 justify-items-center my-4 px-4 md:my-8">
+              <div className="flex items-center gap-3">
+                <FaLaptop className="text-2xl text-green-400" />
+                <h3 className="text-xl md:text-2xl">Online Tutoring</h3>
+              </div>
+              <div className="flex items-center gap-3">
+                <FaBookOpen className="text-2xl text-green-400" />
+                <h3 className="text-xl md:text-2xl">20+ courses</h3>
+              </div>
+              <div className="flex items-center gap-3">
+                <FaLockOpen className="text-2xl text-green-400" />
+                <h3 className="text-xl md:text-2xl">Lifetime Access</h3>
+              </div>
+              <div className="flex items-center gap-3">
+                <FaUsers className="text-2xl text-green-400" />
+                <h3 className="text-xl md:text-2xl">Activate Learning</h3>
+              </div>
+            </div>
+           */}
+        
         <div className="grid md:grid-cols-4 grid-cols-2 gap-5 justify-items-center my-4 px-4 md:my-8">
-          <div className="flex items-center gap-3">
-            <FaLaptop className="text-2xl text-green-400" />
-            <h3 className="text-xl md:text-2xl">Online Tutoring</h3>
-          </div>
-          <div className="flex items-center gap-3">
-            <FaBookOpen className="text-2xl text-green-400" />
-            <h3 className="text-xl md:text-2xl">20+ courses</h3>
-          </div>
-          <div className="flex items-center gap-3">
-            <FaLockOpen className="text-2xl text-green-400" />
-            <h3 className="text-xl md:text-2xl">Lifetime Access</h3>
-          </div>
-          <div className="flex items-center gap-3">
-            <FaUsers className="text-2xl text-green-400" />
-            <h3 className="text-xl md:text-2xl">Activate Learning</h3>
-          </div>
+          <Anime
+            easing="easeOutElastic"
+            opacity={[0, 1]}
+            translateY={[-30, 0]}
+            delay={300}
+          >
+            <div className="flex items-center gap-3">
+              <FaLaptop className="text-2xl text-green-400" />
+              <h3 className="text-xl md:text-2xl">Online Tutoring</h3>
+            </div>
+          </Anime>
+
+          <Anime
+            easing="easeOutElastic"
+            opacity={[0, 1]}
+            translateY={[-30, 0]}
+            delay={500}
+          >
+            <div className="flex items-center gap-3">
+              <FaBookOpen className="text-2xl text-green-400" />
+              <h3 className="text-xl md:text-2xl">20+ courses</h3>
+            </div>
+          </Anime>
+
+          <Anime
+            easing="easeOutElastic"
+            opacity={[0, 1]}
+            translateY={[-30, 0]}
+            delay={700}
+          >
+            <div className="flex items-center gap-3">
+              <FaLockOpen className="text-2xl text-green-400" />
+              <h3 className="text-xl md:text-2xl">Lifetime Access</h3>
+            </div>
+          </Anime>
+
+          <Anime
+            easing="easeOutElastic"
+            opacity={[0, 1]}
+            translateY={[-30, 0]}
+            delay={900}
+          >
+            <div className="flex items-center gap-3">
+              <FaUsers className="text-2xl text-green-400" />
+              <h3 className="text-xl md:text-2xl">Activate Learning</h3>
+            </div>
+          </Anime>
         </div>
 
         <div>
@@ -54,9 +107,7 @@ const Body = () => {
             pronunciation, listening, speaking, reading, and writing.
           </p>
         </div>
-
         {/* popular classes */}
-
         <h2 className="text-3xl font-[600] text-center my-4 md:my-10">
           Popular Courses
         </h2>
@@ -95,9 +146,7 @@ const Body = () => {
             </div>
           ))}
         </div>
-
         {/* popular teachers */}
-
         <h2 className="text-3xl font-[600] text-center my-4 md:my-10">
           Popular Teachers
         </h2>

@@ -257,7 +257,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             </Link>
           </li>
           <li>
-            <Link to="/dashboard" className="font-[600] ">
+            <Link to="/dashboard/student" className="font-[600] ">
               Dashboard
             </Link>
           </li>

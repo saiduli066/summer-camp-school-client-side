@@ -28,16 +28,16 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
         children: [
           {
-          path: 'student',
-          element:<StudentDashboard/>
+            path: "student",
+            element: <StudentDashboard />,
           },
           {
-          path: 'instructor',
-          element:<InstructorsDashboard/>
+            path: "instructor",
+            element: <InstructorsDashboard />,
           },
           {
-          path: 'admin',
-          element:<Admin/>
+            path: "admin",
+            element: <Admin />,
           },
         ],
       },

@@ -17,7 +17,8 @@ const Footer = () => {
           </div>
           <div className="flex flex-wrap items-center">
             <div className="">
-              <p className="text-gray-400">Contact Info: info@lingui.com</p>
+              <p className="text-gray-400">Contact Info:</p>
+              <p className="text-gray-400">Email: info@lingui.com</p>
               <p className="text-gray-400">Phone: 123-456-7890</p>
             </div>
             <div className="mr-5 md:ml-10">
