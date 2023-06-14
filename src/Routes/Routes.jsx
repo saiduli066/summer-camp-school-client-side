@@ -9,6 +9,7 @@ import StudentDashboard from "../Dashboard/StudentDashboard";
 import InstructorsDashboard from "../Dashboard/InstructorsDashboard";
 import Admin from "../Dashboard/Admin";
 import Login from "../pages/Forms/Login";
+import PrivateROutes from "./PrivateROutes";
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: <PrivateROutes><Dashboard /></PrivateROutes>,
         children: [
           {
             path: "student",

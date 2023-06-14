@@ -15,7 +15,6 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 
 const Body = () => {
-
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,13 +34,11 @@ const Body = () => {
       .then((data) => setPopularTeachers(data));
   }, []);
 
-
   const handleSelect = (selectedClass) => {
     if (user && user.email) {
-      const classInfo={email:user.email,selectedClass}
+      const classInfo = { email: user.email, selectedClass };
       fetch(
-        // "https://summer-camp-server-side-seven.vercel.app/selectedClasses",
-        "http://localhost:5000/selectedClasses",
+        "https://summer-camp-server-side-seven.vercel.app/selectedClasses",
         {
           method: "POST",
           headers: {
@@ -63,8 +60,7 @@ const Body = () => {
             navigate(from, { replace: true });
           }
         });
-    }
-    else {
+    } else {
       Swal.fire({
         title: "Please login first",
         icon: "warning",
@@ -78,9 +74,7 @@ const Body = () => {
         }
       });
     }
-  }
-
-
+  };
 
   return (
     <div className="my-6 md:my-20">
@@ -141,39 +135,6 @@ const Body = () => {
         Popular Courses
       </h2>
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-2  md:gap-4 p-3 ">
-        {/* {popularClasses.map((popularClass) => (
-          <div
-            key={popularClass.id}
-            className="card w-80 md:w-96 bg-base-100 mx-auto shadow-xl"
-          >
-            <figure className="px-4 pt-4">
-              <img src={popularClass.image} alt="" className="rounded-xl" />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">{popularClass.name} language</h2>
-              <p>
-                <span className="font-[500]">Instructor</span>:
-                {popularClass.instructor}
-              </p>
-
-              <div className="card-actions items-center ">
-                <div className="flex items-center">
-                  <Rating
-                    placeholderRating={popularClass.classRatings}
-                    readonly
-                    emptySymbol={<FaRegStar />}
-                    placeholderSymbol={<FaStar className="text-orange-400" />}
-                    fullSymbol={<FaStar />}
-                  ></Rating>
-                  <span>{popularClass.classRatings}</span>
-                </div>
-                <div>
-                  <button className="btn btn-primary">Enroll Now</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))} */}
 
         {popularClasses.map((popularClass) => (
           <div
@@ -214,6 +175,8 @@ const Body = () => {
           </div>
         ))}
       </div>
+
+      {/* ********* */}
       {/* popular teachers */}
       <h2 className="text-3xl font-[600] text-center my-4 md:my-10">
         Popular Teachers
