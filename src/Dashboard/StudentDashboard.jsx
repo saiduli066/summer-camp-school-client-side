@@ -1,14 +1,17 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
+import { AuthContext } from '../Providers/AuthProviders';
 
 const StudentDashboard = () => {
- 
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const [students, setStudents] = useState([]);
     useEffect(() => {
       axios
-        .get("https://summer-camp-server-side-seven.vercel.app/students")
+        // .get("https://summer-camp-server-side-seven.vercel.app/students")
+        .get("http://localhost:5000/students")
         .then((response) => {
           setStudents(response.data);
           // console.log(response.data);
@@ -17,6 +20,35 @@ const StudentDashboard = () => {
           console.error("Error fetching reviews:", error);
         });
     }, []);
+  
+    //................//
+  //TODO:  do this in a separate route ..it should in student dashboard. 
+  // read the requirement no.9.
+  
+  const [selectedClass, setSelectedClass] = useState([]);
+  
+  useEffect(() => {
+      axios
+        // .get("https://summer-camp-server-side-seven.vercel.app/selectedClasses")
+        .get("http://localhost:5000/selectedClasses")
+        .then((response) => {
+          console.log(response.data);
+          // const foundUser = users.find(user => user.email === userEmail);
+
+          const studentInfo = response.data.find(studentData=>studentData.email===user.email)
+          const studentEmail = studentInfo.email;
+          console.log(studentEmail);
+          console.log(user.email);
+          if (studentEmail  === user.email) {
+            console.log(studentInfo.selectedClass);
+            setSelectedClass(studentInfo.selectedClass.name);
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching reviews:", error);
+        });
+},[user])
+    
     return (
       <div>
         <Helmet>
@@ -27,11 +59,9 @@ const StudentDashboard = () => {
             {/* head */}
             <thead className="bg-gray-100">
               <tr>
-                <th></th>
+                <th>SL</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Selected CLasses</th>
-                <th>Enrolled CLasses</th>
               </tr>
             </thead>
             <tbody>
@@ -41,7 +71,6 @@ const StudentDashboard = () => {
                   <th>{i + 1}</th>
                   <td> {student?.name}</td>
                   <td>{student?.email}</td>
-                  <td>{student?.class}</td>
                 </tr>
               ))}
             </tbody>

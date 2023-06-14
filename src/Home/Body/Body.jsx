@@ -40,7 +40,8 @@ const Body = () => {
     if (user && user.email) {
       const classInfo={email:user.email,selectedClass}
       fetch(
-        "https://summer-camp-server-side-seven.vercel.app/selectedClasses",
+        // "https://summer-camp-server-side-seven.vercel.app/selectedClasses",
+        "http://localhost:5000/selectedClasses",
         {
           method: "POST",
           headers: {

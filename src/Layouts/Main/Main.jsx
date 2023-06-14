@@ -26,7 +26,7 @@ const Main = () => {
   const [theme, toggleTheme] = useTheme(); 
   return (
     <div>
-      <Navbar theme={theme} toggleTheme={toggleTheme} /> 
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Outlet />
       <Footer />
     </div>

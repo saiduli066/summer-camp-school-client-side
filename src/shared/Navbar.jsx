@@ -161,14 +161,14 @@ import { AuthContext } from "../Providers/AuthProviders";
 //
 
 const Navbar = ({ theme, toggleTheme }) => {
- 
+ console.log(theme,toggleTheme);
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
  
 
   /**NavBar**/
   return (
-    <div className="navbar bg-white">
+    <div className={`navbar ${theme ==='light' ?'bg-white':"bg-black"} `}>
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

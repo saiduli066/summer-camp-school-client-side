@@ -12,8 +12,9 @@ export const useTheme = () => {
   };
 
   useEffect(() => {
-    document.documentElement.classList.remove("theme-light", "theme-dark"); 
-    document.documentElement.classList.add("theme-" + theme); 
+    // document.documentElement.classList.remove("theme-light", "theme-dark"); 
+    // document.documentElement.classList.add("theme-" + theme); 
+    document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
 
   return [theme, toggleTheme];
